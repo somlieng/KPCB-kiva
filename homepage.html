@@ -17,6 +17,8 @@
 		 <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      
+       <!--Google AJAX API-->
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
       <!--google chart function-->
@@ -60,9 +62,9 @@
 				</div>
 			</nav>
 
-			<div class="row">
+			<div class="row teal lighten-5">
 
-			     <div class="teal lighten-5 col s12 m4 l2">
+			     <div class="col s12 m4 l2">
 
 			     	<p>Search Filter</p>
 
@@ -72,13 +74,36 @@
 					      <div class="collapsible-header"></i>My Loans</div>
 					      <div class="collapsible-body" >
 					      	
-					      	<!--Loans List-->
-					      	<div class="collection">
-						        <a href="#!" class="collection-item">Loan#1</a>
-						        <a href="#!" class="collection-item">Loan#2</a>
-						        <a href="#!" class="collection-item">Loan#3</a>
-						        <a href="#!" class="collection-item">Loan#4</a>
-					      </div>
+					      	<table>
+							    
+							    <tr>
+							      
+							      <td>
+
+							      	<form action="#">
+									    <p>
+									      <input name="group1" type="radio" id="test1" />
+									      <label for="test1">Red</label>
+									    </p>
+									    <p>
+									      <input name="group1" type="radio" id="test2" />
+									      <label for="test2">Yellow</label>
+									    </p>
+									 </form>
+
+							      </td>
+
+							    </tr>
+
+							    <tr>
+							    	<td>
+							    		<button class="btn waves-effect waves-light" type="submit" name="action">View Graph
+									    <i class="#"></i>
+									  </button>
+							    	</td>
+							    </tr>
+
+							 </table>
 					      
 					      </div>
 					    </li>
@@ -104,15 +129,36 @@
 					    </li>
 					   
 					    <li>
-					      <div class="collapsible-header"><i class="material-icons"></i>Global Trends</div>
-					      <div class="collapsible-body"><p>Data Input Stream Collection</p></div>
+					      <div class="collapsible-header"><i class="material-icons"></i>UN Human Development Index</div>
+					      <div class="collapsible-body">
+					      	
+					      	<form action="#">
+							    <p>
+							      <input name="group1" type="radio" id="test1" />
+							      <label for="test1">Red</label>
+							    </p>
+							    <p>
+							      <input name="group1" type="radio" id="test2" />
+							      <label for="test2">Yellow</label>
+							    </p>
+							    <p>
+							      <input class="with-gap" name="group1" type="radio" id="test3"  />
+							      <label for="test3">Green</label>
+							    </p>
+							      <p>
+							        <input name="group1" type="radio" id="test4" disabled="disabled" />
+							        <label for="test4">Brown</label>
+							    </p>
+							 </form>
+
+					      </div>
 					    </li>
 					
 					</ul>
 
 			     </div>
 
-			     <div class="col s12 m8 l10">
+			     <div class="white col s12 m8 l10">
 			     <div class="container">
 			       	<p>Data Visualisation
 					</p>
