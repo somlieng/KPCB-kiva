@@ -46,6 +46,27 @@
       }
     </script>
 
+    <!--query data from UN Human Development API-->
+    <script type="text/javascript">
+
+    function UNRead() {
+    	var http = require('http');
+
+		http.get('http://data.undp.org/resource/sf29-qtcx.json', function(response) {
+		    var body = '';
+		    response.on('data', function(d){
+		        body += d;
+		    });
+		    response.on('end', function() {
+		        var parsed = JSON.parse(body);
+		        console.log(parsed);
+		    });
+		});
+
+    }
+
+    </script>
+
 	</head>
 	
 	<body>
@@ -135,19 +156,19 @@
 					      	<form action="#">
 							    <p>
 							      <input name="group1" type="radio" id="test1" />
-							      <label for="test1">Red</label>
+							      <label for="test1">Country</label>
 							    </p>
 							    <p>
 							      <input name="group1" type="radio" id="test2" />
-							      <label for="test2">Yellow</label>
+							      <label for="test2">Category1</label>
 							    </p>
 							    <p>
 							      <input class="with-gap" name="group1" type="radio" id="test3"  />
-							      <label for="test3">Green</label>
+							      <label for="test3">Category2</label>
 							    </p>
 							      <p>
 							        <input name="group1" type="radio" id="test4" disabled="disabled" />
-							        <label for="test4">Brown</label>
+							        <label for="test4">Category3</label>
 							    </p>
 							 </form>
 
