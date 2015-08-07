@@ -3,9 +3,8 @@
 	<head>
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
 		<title>Kiva Data Visualisation Webpage</title>
-		<link rel="stylesheet" type="text/css" href="css/mainpage.css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 
 		<!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
@@ -20,52 +19,6 @@
       
        <!--Google AJAX API-->
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-      <!--google chart function-->
-      <script type="text/javascript">
-      google.load("visualization", "1", {packages:["geochart"]});
-      google.setOnLoadCallback(drawRegionsMap);
-
-      function drawRegionsMap() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Country', 'Popularity'],
-          ['Germany', 200],
-          ['United States', 300],
-          ['Brazil', 400],
-          ['Canada', 500],
-          ['France', 600],
-          ['RU', 700]
-        ]);
-
-        var options = {};
-
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-        chart.draw(data, options);
-      }
-    </script>
-
-    <!--query data from UN Human Development API-->
-    <script type="text/javascript">
-
-    function UNRead() {
-    	var http = require('http');
-
-		http.get('http://data.undp.org/resource/sf29-qtcx.json', function(response) {
-		    var body = '';
-		    response.on('data', function(d){
-		        body += d;
-		    });
-		    response.on('end', function() {
-		        var parsed = JSON.parse(body);
-		        console.log(parsed);
-		    });
-		});
-
-    }
-
-    </script>
 
 	</head>
 	
@@ -89,48 +42,37 @@
 
 			     	<p>Search Filter</p>
 
-			        <ul class="collapsible" data-collapsible="accordion">
-					   
-					    <li>
-					      <div class="collapsible-header"></i>My Loans</div>
+			     	<ul>
+			     		<li>
+			     			My Loans
+			     		</li>
+
+			     		<li>
+			     			Kiva Categories
+			     		</li>
+
+			     		<li>
+			     			UN Human Development Index
+			     		</li>
+			     	</ul>
+
+			     	<ul class="collapsible" data-collapsible="accordion">
+			     		<li>
+
+			     		<div class="collapsible-header"></i>My Loans</div>
 					      <div class="collapsible-body" >
 					      	
-					      	<table>
-							    
-							    <tr>
-							      
-							      <td>
-
-							      	<form action="#">
-									    <p>
-									      <input name="group1" type="radio" id="test1" />
-									      <label for="test1">Red</label>
-									    </p>
-									    <p>
-									      <input name="group1" type="radio" id="test2" />
-									      <label for="test2">Yellow</label>
-									    </p>
-									 </form>
-
-							      </td>
-
-							    </tr>
-
-							    <tr>
-							    	<td>
-							    		<button class="btn waves-effect waves-light" type="submit" name="action">View Graph
-									    <i class="#"></i>
-									  </button>
-							    	</td>
-							    </tr>
-
-							 </table>
+					      	<p>Generate list of personal loans here</p>
 					      
 					      </div>
-					    </li>
-					    
-					    <li>
-					      <div class="collapsible-header"><i class="material-icons"></i>Kiva Categories</div>
+
+			     		</li>
+			     	</ul>
+
+			     	<ul class="collapsible" data-collapsible="accordion">
+			     		<li>
+
+			     		<div class="collapsible-header"><i class="material-icons"></i>Kiva Categories</div>
 					      <div class="collapsible-body">
 					      	
 					      <!--kiva categories-->
@@ -147,30 +89,54 @@
 					      </div>
 
 					      </div>
-					    </li>
-					   
+			     		</li>
+			     	</ul>
+
+			        <ul class="collapsible" data-collapsible="accordion">
+					
 					    <li>
-					      <div class="collapsible-header"><i class="material-icons"></i>UN Human Development Index</div>
+					      <div class="collapsible-header"><i class="material-icons"></i>UN Human Development</div>
 					      <div class="collapsible-body">
-					      	
-					      	<form action="#">
-							    <p>
-							      <input name="group1" type="radio" id="test1" />
-							      <label for="test1">Country</label>
-							    </p>
-							    <p>
-							      <input name="group1" type="radio" id="test2" />
-							      <label for="test2">Category1</label>
-							    </p>
-							    <p>
-							      <input class="with-gap" name="group1" type="radio" id="test3"  />
-							      <label for="test3">Category2</label>
-							    </p>
-							      <p>
-							        <input name="group1" type="radio" id="test4" disabled="disabled" />
-							        <label for="test4">Category3</label>
-							    </p>
-							 </form>
+
+					      	<div class="collection">
+						        
+						        <a href="#!" class="collection-item collection" id="HDIC">Human Development Index and its Components</a>
+
+						        <a href="#!" class="collection-item" id="HDIT">Human Development Index Trends</a>
+
+						        <a href="#!" class="collection-item" id="IAHD">Inequality-Adjusted Human Development Index</a>
+
+						        <a href="#!" class="collection-item" id="GRDI">Gender-related Development Index</a>
+
+						        <a href="#!" class="collection-item" id="MPI">Multidimensional Poverty Index</a>
+
+						        <a href="#!" class="collection-item" id="MPI2">Multidimensional Poverty Index - changes over time for selected countries</a>
+
+						        <a href="#!" class="collection-item" id="COR">Command Over Resources</a>
+
+						        <a href="#!" class="collection-item" id="HCY">Health - Children and Youth</a>
+
+						        <a href="#!" class="collection-item"id="AHHE"> Adult Health and Health Expenditure</a>
+
+						        <a href="#!" class="collection-item" id="ED">Education</a>
+
+						        <a href="#!" class="collection-item" id="COAR">Command over and allocation of resources</a>
+
+						        <a href="#!" class="collection-item" id="SC">Social Competencies</a>
+
+						        <a href="#!" class="collection-item" id="PI">Personal Insecurity</a>
+
+						        <a href="#!" class="collection-item" id="II">International Integration</a>
+
+						        <a href="#!" class="collection-item" id="EN">Environment</a>
+
+						        <a href="#!" class="collection-item" id="PT">Population Trends</a>
+
+						        <a href="#!" class="collection-item" id="SIPW">Supplementary indicators: Perceptions of wellbeing</a>
+
+						        <a href="#!" class="collection-item " id="HDIC">Human Development Indicators by Country</a>
+
+					      </div>
 
 					      </div>
 					    </li>
@@ -184,7 +150,8 @@
 			       	<p>Data Visualisation
 					</p>
 
-					<div id="regions_div" style="width: 900px; height: 500px;"></div>
+					<!--Data Tables-->
+					<div id ="regions_div"></div>
 					
 					<div class="divider"></div>
 					  <div class="section">
@@ -213,11 +180,17 @@
 					      <div class="col s4">
 					       <p>Hello</p>
 					      </div>
-					      </div>
-					   </div>
+					  </div>
+
+				</div>
+			    
 			     </div>
     		</div>
 		</div>
+
+	 <!--Functions for web app-->
+      <script src="actions.js"></script>
+      
 
 	</body>
 </html>
